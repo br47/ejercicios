@@ -1,0 +1,9 @@
+Al ejecutarse la función transfer, primero se comprueba el saldo del cliente que transfiere el dinero, 
+después que su saldo sea mayor que la cantidad a transferir y después el saldo del cliente que va a recibir
+el dinero. A continuación actualiza el saldo bancario del cliente 1 para restarle la cantidad a transferir, y
+por último actualiza el saldo del cliente 2 sumándole dicha cantidad. Vemos 5 pasos diferenciados, en los cuales
+la función podría fallar al momento de su ejecución. En la mayoría de transiciones entre estos pasos un fallo no supondría un problema,
+pero si el fallo ocurre entre el paso de restar el dinero al cliente 1 y sumarle la cantidad al cliente 2 vienen los problemas puesto que
+ese dinero se resta de la cuenta del cliente que hace la transferencia pero no llega a la cuenta del cliente que la recibe, de ahí
+las quejas de los clientes. Al utilizar transacciones en el código evitamos este problema porque en caso de error se omite el código ya ejecutado,
+y solo se realizaría la transferencia en caso de llegar al final del código definido dentro del contexto de la transacción.
